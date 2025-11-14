@@ -53,7 +53,7 @@ Version: 1.0
 }
 .btn:hover {
   padding-right: 30px;
-  background: #16315e;
+  background: rgb(22.3486238532, 49.4862385321, 93.6513761468);
 }
 .btn:before {
   content: "→";
@@ -141,7 +141,7 @@ a {
   cursor: pointer;
 }
 a:hover, a:active, a:visited {
-  color: #16315e;
+  color: rgb(22.3486238532, 49.4862385321, 93.6513761468);
   text-decoration: none;
 }
 
@@ -156,8 +156,6 @@ a:hover, a:active, a:visited {
   margin-left: -5%;
   padding-top: 10px;
   /*Breakpoint for when menu can't fit the screen anymore*/
-  /*#header h1*/
-  /*Close nav#menu*/
 }
 @media screen and (max-width: 1190px) {
   #header {
@@ -166,6 +164,9 @@ a:hover, a:active, a:visited {
     height: auto;
     position: relative;
   }
+}
+#header {
+  /*#header h1*/
 }
 #header h1 {
   vertical-align: middle;
@@ -185,8 +186,6 @@ a:hover, a:active, a:visited {
   padding-left: 5%;
   padding-right: 5%;
   /*Breakpoint for when menu can't fit the screen anymore*/
-  /*Close @media screen and (max-width: 1190px)*/
-  /*Close ul*/
 }
 @media screen and (max-width: 1190px) {
   #header nav#menu {
@@ -198,10 +197,12 @@ a:hover, a:active, a:visited {
     -o-transition: 1s;
     transition: 1s;
     /*Taken fomr mixin.scss*/
-    /*Open menu*/
   }
   #header nav#menu li {
     display: none !important;
+  }
+  #header nav#menu {
+    /*Open menu*/
   }
   #header nav#menu.responsive {
     width: 100%;
@@ -230,9 +231,11 @@ a:hover, a:active, a:visited {
     padding-bottom: 6px;
   }
 }
+#header nav#menu {
+  /*Close @media screen and (max-width: 1190px)*/
+}
 #header nav#menu ul {
   display: block;
-  /*Close li*/
 }
 #header nav#menu ul li {
   display: inline-block;
@@ -244,15 +247,13 @@ a:hover, a:active, a:visited {
   font-size: 1.25rem;
   line-height: 25px;
   line-height: 1.5625rem;
-  /*Breakpoint for when menu can't fit the screen anymore*/
-  /*@media screen and (max-width: 1190px)*/
 }
 #header nav#menu ul li:first-child {
   margin-left: 0;
 }
 #header nav#menu ul li a.current {
-  color: #16315e;
-  border-bottom: 3px solid #16315e;
+  color: rgb(22.3486238532, 49.4862385321, 93.6513761468);
+  border-bottom: 3px solid rgb(22.3486238532, 49.4862385321, 93.6513761468);
   padding-bottom: 16px;
 }
 #header nav#menu ul li.icon {
@@ -283,6 +284,9 @@ a:hover, a:active, a:visited {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
+#header nav#menu ul li {
+  /*Breakpoint for when menu can't fit the screen anymore*/
+}
 @media screen and (max-width: 1190px) {
   #header nav#menu ul li.icon {
     display: inline-block !important;
@@ -294,13 +298,23 @@ a:hover, a:active, a:visited {
     font-size: 20px;
   }
 }
+#header nav#menu ul li {
+  /*@media screen and (max-width: 1190px)*/
+}
 @media (max-width: 870px) {
   #header nav#menu ul li.icon {
     top: 15px;
   }
 }
-
-/*Close #header*/
+#header nav#menu ul {
+  /*Close li*/
+}
+#header nav#menu {
+  /*Close ul*/
+}
+#header {
+  /*Close nav#menu*/
+} /*Close #header*/
 /*Header SASS file*/
 /*! ARTICLE STYLES */
 article#article {
@@ -311,11 +325,6 @@ article#article {
   margin: 10px 1%;
   max-height: 200px;
   /*Breakpoints for responsive grid system*/
-  /*The first and largest article*/
-  /*Close .article-0*/
-  /*Styling of smallest articles in 'sidebar'*/
-  /*Close .info*/
-  /*Close .show*/
 }
 @media (min-width: 461px) and (max-width: 870px) {
   article#article {
@@ -327,6 +336,9 @@ article#article {
     width: 98% !important;
     max-height: none;
   }
+}
+article#article {
+  /*The first and largest article*/
 }
 article#article.article-0 {
   width: 64%;
@@ -356,8 +368,14 @@ article#article.article-0 img {
     max-height: 200px !important;
   }
 }
+article#article {
+  /*Close .article-0*/
+}
 article#article.article-1 {
   width: 32%;
+}
+article#article {
+  /*Styling of smallest articles in 'sidebar'*/
 }
 article#article.article-2, article#article.article-3, article#article.article-4 {
   border-top: 1px solid #CCC;
@@ -426,6 +444,9 @@ article#article .info a {
 article#article .info .description, article#article .info .btn {
   display: none;
 }
+article#article {
+  /*Close .info*/
+}
 article#article.hide {
   opacity: 0;
   position: absolute;
@@ -444,7 +465,6 @@ article#article.show {
   -o-transition: opacity 1s;
   transition: opacity 1s;
   /*Taken fomr mixin.scss*/
-  /*Close .info*/
 }
 article#article.show a.img-link {
   float: none !important;
@@ -480,8 +500,12 @@ article#article.show .info a {
 article#article.show .info .date-author {
   display: block !important;
 }
-
-/*Close #article*/
+article#article.show {
+  /*Close .info*/
+}
+article#article {
+  /*Close .show*/
+} /*Close #article*/
 #no-results {
   display: none;
   padding: 2% 0;
@@ -497,10 +521,150 @@ article#article.show .info .date-author {
 }
 
 /*Articles SASS file*/
+/* Frame container */
+.frame {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Map / contact section */
+.frame .map {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0;
+  background-color: #fff;
+}
+
+/* Section heading */
+.frame .text-wrapper {
+  font-family: var(--heading-1-font-family);
+  font-weight: var(--heading-1-font-weight);
+  font-size: var(--heading-1-font-size);
+  line-height: var(--heading-1-line-height);
+  color: var(--variable-collection-black-colour);
+  text-align: left;
+}
+
+/* Contact cards row */
+.frame .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: flex-start;
+}
+
+/* Individual contact card */
+.frame .cell,
+.frame .content-wrapper {
+  flex: 1 1 250px; /* min 250px, grow to fill row */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Card content */
+.frame .div-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Category (General inquiries, Careers etc.) */
+.frame .span {
+  font-family: var(--heading-2-font-family);
+  font-weight: var(--heading-2-font-weight);
+  font-size: var(--heading-2-font-size);
+}
+
+/* Contact info text */
+.frame .text-wrapper-2 {
+  font-family: var(--paragraph-style-font-family);
+  font-size: var(--paragraph-style-font-size);
+  font-weight: var(--paragraph-style-font-weight);
+  line-height: var(--paragraph-style-line-height);
+}
+
+/* Map image at the bottom */
+.frame .img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Social media icons */
+.frame .social-media-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.frame .social-media-icons img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Optional: Responsive tweaks for smaller screens */
+@media (max-width: 768px) {
+  .frame {
+    padding: 30px 15px;
+  }
+  .frame .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .frame .text-wrapper {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .frame .social-media-icons {
+    justify-content: center;
+  }
+}
+/* Hela frame centrerad */
+.frame {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centrerar allt innehåll horisontellt */
+  padding: 50px 20px;
+  background-color: #ffffff;
+  gap: 50px;
+}
+
+/* Map iframe wrapper */
+.frame .map-wrapper {
+  width: 1226px;
+  max-width: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center; /* centrerar iframe inuti wrappern */
+}
+
+.frame .map-wrapper iframe {
+  width: 1226px;
+  max-width: 100%;
+  height: 287px;
+  border: 0;
+  border-radius: 8px;
+  display: block;
+}
+
 html {
   width: 100%;
   margin: 0;
-  border-top: 2px solid #16315e;
+  border-top: 2px solid rgb(22.3486238532, 49.4862385321, 93.6513761468);
 }
 
 body {
