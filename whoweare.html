@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Who we are - Google News</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Playfair+Display:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+  </head>
+<script type="text/javascript" src="./assets/js/menu.js"></script>
+<script type="text/javascript" src="./assets/js/request.js"></script>
+  <body>
+    <header id="header" class="header">
+        <h1>Google News</h1>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="/Offerings">What we do</a></li>
+                <li><a href="/About-us" class="current">Who we are</a></li>
+                <li><a href="/Customers">Customers</a></li>
+                <li><a href="/Careers">Career</a></li>
+                <li><a href="/Investor-relations">IR</a></li>
+                <li><a href="/Latest">Latest</a></li>
+                <li><a href="/Contact">Contact</a></li>
+                <li class="search">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        onkeyup="searchFunction()"
+                        placeholder="Search titles"
+                        title="Type in title search term"
+                    >
+                </li>
+                <li class="icon">
+                    <a href="javascript:void(0);" onclick="menuFunction()">&#9776;</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== MAIN-INNEHÅLL ========== -->
+           <section class="who-hero">
+        <img src="./assets/Images/newspaper.png" alt="Person reading a newspaper">
+      </section>
+    <main class="who-we-are-page">
+
+      <!-- 1. Stor bild / hero -->
+
+      <!-- 2. Statistik-rad -->
+      <section class="who-stats">
+        <div class="who-stats__item">
+          <p class="who-stats__number">5000</p>
+          <p class="who-stats__label">People employed</p>
+        </div>
+        <div class="who-stats__item">
+          <p class="who-stats__number">1967</p>
+          <p class="who-stats__label">Year founded</p>
+        </div>
+        <div class="who-stats__item">
+          <p class="who-stats__number">50+</p>
+          <p class="who-stats__label">Countries with subscribers</p>
+        </div>
+        <div class="who-stats__item">
+          <p class="who-stats__number">100</p>
+          <p class="who-stats__label">News per day</p>
+        </div>
+      </section>
+
+      <!-- 3. Our story-texten -->
+      <section class="who-story">
+        <h2>Our Story</h2>
+        <p>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium...
+        </p>
+        <p>
+          (Här kan du klistra in den lorem ipsum-text som läraren gav, eller skriva egen.)
+        </p>
+      </section>
+
+      <!-- 4. Meet the team – rutnät med personer -->
+      <section class="who-team">
+  <h2>Meet the team</h2>
+
+  <div class="who-team__grid">
+    <!-- Kort 1 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-1.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 2 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-2.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 3 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-3.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 4 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-4.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 5 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-1.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 6 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-1.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 7 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-1.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 8 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-1.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+  </div>
+</section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-column">
+          <h3>About us</h3>
+          <p>What we do<br>Who we are</p>
+        </div>
+        <div class="footer-column">
+          <h3>About you</h3>
+          <p>Customers<br>Latest</p>
+        </div>
+        <div class="footer-column">
+          <h3>Address</h3>
+          <p>Google street 2,<br>526 42 Googleville</p>
+        </div>
+        <div class="footer-column footer-column--right">
+          <p>Copyright 2022 Google News</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

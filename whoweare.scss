@@ -1,0 +1,136 @@
+/* ===========================
+   WHO WE ARE PAGE
+   ========================== */
+
+.who-we-are-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+/* 1. Hero-bild */
+.who-hero img {
+  width: 100%;
+  display: block;
+}
+
+/* 2. Statistik-raden */
+.who-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.who-stats__item {
+  text-align: left;
+}
+
+.who-stats__number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.who-stats__label {
+  font-size: 0.9rem;
+}
+
+/* 3. Story-sektion */
+.who-story {
+  padding: 40px 0;
+}
+
+.who-story h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.who-story p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* 4. Team-sektion */
+.who-team {
+  padding: 40px 0 60px;
+}
+
+.who-team h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+/* Rutnät med bilder */
+.who-team__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 32px;
+}
+
+.team-card img {
+  width: 100%;
+  display: block;
+}
+
+.team-card__name {
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.team-card__role {
+  font-size: 0.9rem;
+}
+/* ===========================
+   MEET THE TEAM
+   ========================== */
+
+.who-team {
+  max-width: 1200px;      // samma bredd som resten av sidan
+  margin: 80px auto 120px;
+  padding: 0 40px;
+}
+
+.who-team h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+/* Rutnätet med 8 kort (4 per rad) */
+.who-team__grid {
+  display: grid;                          // aktiverar CSS grid
+  grid-template-columns: repeat(4, 1fr);  // 4 kolumner = 4 bilder per rad
+  gap: 40px;                              // mellanrum mellan korten
+}
+
+/* Själva kortet */
+.team-card img {
+  width: 100%;      // bilden fyller kortets bredd
+  display: block;   // tar bort vitt “glapp” under bilden
+}
+
+.team-card__name {
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.team-card__role {
+  font-size: 14px;
+}
+.who-hero {
+  width: 100vw;              // full viewport width
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;        // drar ut sektionen till fullbredd
+  margin-right: -50vw;
+}
+
+.who-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
