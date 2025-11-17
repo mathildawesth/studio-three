@@ -134,3 +134,53 @@
   height: auto;
   display: block;
 }
+/* ===========================
+   MEET THE TEAM (båda sidor)
+   ========================== */
+
+.who-team {
+  max-width: 1226px;
+  margin: 80px auto 120px;
+  padding: 0 20px;
+}
+
+.who-team h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+/* Rutnät med kort – 4 eller 5 per rad beroende på bredd */
+.who-team__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 40px 32px;
+}
+
+.team-card img {
+  width: 100%;
+  display: block;
+}
+
+.team-card__name {
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.team-card__role {
+  font-size: 13px;
+}
+
+/* Lite snällare layout på mindre skärm */
+@media (max-width: 1000px) {
+  .who-team__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .who-team__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,85 +1,208 @@
+<!DOCTYPE html>
+<html lang="sv">
 <head>
   <meta charset="utf-8">
   <title>Contact - Google News</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--Stylesheets-->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Playfair+Display:400,700" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700%7CPlayfair+Display:400,700" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/reset.css" type="text/css">
   <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
-</head>
-  <body>
-    <header id="header" class="header">
-      <h1>Google News</h1>
-      <nav id="menu" class="menu">
-        <ul>
-          <li><a href="/Offerings">What we do</a></li>
-          <li><a href="/About-us">Who we are</a></li>
-          <li><a href="/Customers">Customers</a></li>
-          <li><a href="/Careers">Career</a></li>
-          <li><a href="/Investor-relations">IR</a></li>
-          <li><a href="/Latest">Latest</a></li>
-          <li><a href="/Contact" class="current">Contact</a></li>
-          <li class="search">
-            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search titles" title="Type in title search term">
-          </li>
-          <li class="icon">
-            <a href="javascript:void(0);" onclick="menuFunction()">&#9776;</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section class="hero">
-  <img src="./assets/images/architecture.png" alt="Hero image">
-</section>
+  <!-- Inline CSS för hero -->
+  <!-- Inline CSS för hero -->
+  <style>
+    .hero {
+      /* gör sektionen lika bred som hela fönstret */
+      width: 100vw;
+      height: 387px; /* samma höjd som du hade */
+      margin: 0;
+      padding: 0;
 
-    <!--JS Scripts för funktioner i menyn-->
-    <script type="text/javascript" src="./assets/js/menu.js"></script>
-    <script type="text/javascript" src="./assets/js/request.js"></script>
- <div class="frame">
-      <div class="map">
-        <div class="text-wrapper">Get in touch</div>
-        <div class="row">
-          <div class="cell">
-            <div class="content">
-              <p class="div">
-                <span class="span">General inquiries<br /></span>
-                <span class="text-wrapper-2">info@googlenews.com<br />+846 795 85 96</span>
-              </p>
-            </div>
-          </div>
-          <div class="content-wrapper">
-            <div class="div-wrapper">
-              <p class="div">
-                <span class="span">New business<br /></span>
-                <span class="text-wrapper-2">Melissa Humble<br />melissa.humble@googlenews.com</span>
-              </p>
-            </div>
-          </div>
-          <div class="content-wrapper">
-            <div class="div-wrapper">
-              <p class="div">
-                <span class="span">Careers<br /></span>
-                <span class="text-wrapper-2">job@googlenews.com<br />internship@googlenews.com</span>
-              </p>
-            </div>
-          </div>
-          <div class="cell-2">
-            <div class="element-bureaus-outside-wrapper"><div class="element-bureaus-outside"></div></div>
-          </div>
+      /* tricket som tar bort ev. padding från containern */
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+
+      /* själva bilden */
+      background-image: url('./assets/images/architecture.png');
+      background-size: cover;      /* fyll hela ytan */
+      background-position: center; /* centrera motivet */
+      background-repeat: no-repeat;
+    }
+
+    /* resten kan du låta vara som du hade */
+    .map {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .cell {
+      flex: 1 1 250px;
+      min-width: 200px;
+    }
+    .social-media-icons img {
+      width: 40px;
+      margin-right: 15px;
+    }
+    .map-wrapper iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header id="header" class="header">
+    <h1>Google News</h1>
+    <nav id="menu" class="menu">
+      <ul>
+        <li><a href="/Offerings">What we do</a></li>
+        <li><a href="/About-us">Who we are</a></li>
+        <li><a href="/Customers">Customers</a></li>
+        <li><a href="/Careers">Career</a></li>
+        <li><a href="/Investor-relations">IR</a></li>
+        <li><a href="/Latest">Latest</a></li>
+        <li><a href="/Contact" class="current">Contact</a></li>
+        <li class="search">
+          <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search titles" title="Type in title search term">
+        </li>
+        <li class="icon">
+          <a href="javascript:void(0);" onclick="menuFunction()">&#9776;</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Hero Section utan text -->
+  <section class="hero"></section>
+  <main class="frame">
+    <section class="map">
+      <h2>Get in touch</h2>
+      <div class="row">
+        <div class="cell">
+          <h3>General inquiries</h3>
+          <p>info@googlenews.com<br>+846 795 85 96</p>
+        </div>
+        <div class="cell">
+          <h3>New business</h3>
+          <p>Melissa Humble<br>melissa.humble@googlenews.com</p>
+        </div>
+        <div class="cell">
+          <h3>Careers</h3>
+          <p>job@googlenews.com<br>internship@googlenews.com</p>
         </div>
         <div class="social-media-icons">
-          <img class="facebook" src="./assets/Images/Facebook.svg" />
-          <img class="tumblr" src="./assets/Images/Tumblr.svg" />
-          <img class="linked-in" src="./assets/Images/LinkedIn.svg" />
-    </div>
-     <!-- Google Maps iframe -->
-<div class="map-wrapper">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d1757.254236773952!2d20.755924627417713!3d63.8683831771214!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d63.8682175!2d20.7587185!4m5!1s0x467c4c8cb0795e6f%3A0x57afaf29e1108e6b!2sNorra%20Norrfj%C3%A4rden%20205%2C%20918%2034%20S%C3%A4var!3m2!1d63.8685489!2d20.7582806!5e0!3m2!1ssv!2sse!4v1763111274604!5m2!1ssv!2sse" width="1226" height="287" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
-  </body>
+          <img class="facebook" src="./assets/images/Facebook.svg" alt="Facebook">
+          <img class="tumblr" src="./assets/images/Tumblr.svg" alt="Tumblr">
+          <img class="linked-in" src="./assets/images/LinkedIn.svg" alt="LinkedIn">
+        </div>
+        <div class="cell cell-2">
+          <div class="element-bureaus-outside"></div>
+        </div>
+      </div>
+      <div class="map-wrapper">
+        <iframe
+          title="Google Maps Location of Google News"
+          src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d1757.254236773952!2d20.755924627417713!3d63.8683831771214!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d63.8682175!2d20.7587185!4m5!1s0x467c4c8cb0795e6f%3A0x57afaf29e1108e6b!2sNorra%20Norrfj%C3%A4rden%20205%2C%20918%2034%20S%C3%A4var!3m2!1d63.8685489!2d20.7582806!5e0!3m2!1ssv!2sse!4v1763111274604!5m2!1ssv!2sse"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+    <section class="who-team">
+  <h3>Meet the team</h3>
+
+  <div class="who-team__grid">
+    <!-- Kort 1 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-1.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 2 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-2.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 3 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-3.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 4 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-4.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 5 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-1.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 6 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-1.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 7 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-1.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+
+    <!-- Kort 8 -->
+    <article class="team-card">
+      <img src="./assets/Images/team-1.jpg" alt="Portrait of Melissa Humble">
+      <h3 class="team-card__name">Melissa Humble</h3>
+      <p class="team-card__role">CEO</p>
+    </article>
+  </div>
+</section>
+  </main>
+  <!-- JS Scripts -->
+  <script type="text/javascript" src="./assets/js/menu.js"></script>
+  <script type="text/javascript" src="./assets/js/request.js"></script>
+</body>
 </html>
+<main class="frame">
+    <section class="map">
+      <div class="row">
+        <div class="cell">
+          <h3>About us</h3>
+          <p>What we do<br>Who we are</p>
+        </div>
+        <div class="cell">
+          <h3>About you</h3>
+          <p>Customers<br>Latest</p>
+        </div>
+        <div class="cell">
+          <h3>Adress</h3>
+          <p>job@googlenews.com<br>internship@googlenews.com</p>
+        </div>
+ <div class="cell">
+          <p>job@googlenews.com<br>internship@googlenews.com</p>
+        </div>
+        <div class="cell cell-2">
+          <div class="element-bureaus-outside"></div>
+        </div>
+      </div>
