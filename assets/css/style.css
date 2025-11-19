@@ -549,13 +549,14 @@ article#article {
 /* Yttre container för kontaktinnehållet */
 .frame {
   width: 100%;
-  max-width: 1226px; /* samma bredd som designen */
+  max-width: 1226px; /* maxbredd på desktop */
   margin: 0 auto 60px;
   padding: 40px 20px 40px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  box-sizing: border-box;
 }
 
 /* “Get in touch”-sektionen */
@@ -593,7 +594,6 @@ article#article {
   gap: 6px;
 }
 
-/* Små rubriker: General inquiries, New business, Careers */
 .frame .cell h3 {
   font-weight: 700;
   font-size: 16px;
@@ -611,7 +611,7 @@ article#article {
    SOCIAL MEDIA-IKONER
    ========================== */
 .frame .social-media-icons {
-  margin-left: auto; /* tryck ikonerna åt höger */
+  margin-left: auto;
   display: flex;
   gap: 16px;
   align-self: flex-end;
@@ -624,21 +624,22 @@ article#article {
 }
 
 /* ===========================
-   KARTA
+   KARTA – RESPONSIV
    ========================== */
 .frame .map-wrapper {
-  width: 1226px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1226px;
+  margin: 0 auto;
   padding: 0;
   background: none;
   box-shadow: none;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .frame .map-wrapper iframe {
-  width: 1226px;
-  max-width: 100%;
+  width: 100%;
   height: 287px;
   border: 0;
   border-radius: 0;
@@ -648,58 +649,43 @@ article#article {
 /* ===========================
    MEET THE TEAM (på contactsidan)
    ========================== */
-/* Lite tajtare runt bilderna – bara på contactsidan */
 .frame .who-team {
-  padding: 20px 0 10px;
+  padding: 40px 0 20px;
 }
 
-/* Gör “Meet the team”-rubriken identisk med “General inquiries” */
+.frame .who-team h2,
 .frame .who-team h3 {
+  font-family: inherit;
   font-weight: 700;
   font-size: 16px;
-  margin: 0 0 8px;
+  margin: 0 0 12px;
 }
 
-/* ===========================
-   RESPONSIVE
-   ========================== */
-@media (max-width: 768px) {
-  .frame {
-    padding: 32px 16px 40px;
-    gap: 32px;
-  }
-  .frame .row {
-    flex-direction: column;
-    gap: 24px;
-  }
-  .frame .social-media-icons {
-    margin-left: 0;
-    align-self: flex-start;
-  }
+.who-team__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 40px 32px;
 }
-/* Extra mobilanpassning för VG – ner till 480px */
-@media (max-width: 480px) {
-  .frame {
-    padding: 24px 16px 40px;
-    gap: 24px;
-  }
-  .frame .map h2 {
-    font-size: 20px;
-  }
-  .frame .row {
-    gap: 16px;
-  }
-  .frame .map-wrapper iframe {
-    height: 240px;
-  }
-  .who-team__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px 16px;
-  }
-  .site-footer {
-    padding: 32px 16px 80px;
-  }
+
+/* Bildkort */
+.team-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
 }
+
+.team-card__name {
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.team-card__role {
+  font-size: 13px;
+}
+
 /* ===========================
    FOOTER (gäller alla sidor)
    ========================== */
@@ -724,6 +710,72 @@ article#article {
   text-align: right;
 }
 
+/* ===========================
+   RESPONSIVE BREAKPOINTS
+   ========================== */
+@media (max-width: 1000px) {
+  .frame {
+    padding: 32px 16px 40px;
+    gap: 32px;
+  }
+  .who-team__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .frame .row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .frame .social-media-icons {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+  .frame .map-wrapper {
+    max-width: 100%; /* släpp 1226px på små skärmar */
+  }
+  .frame .map-wrapper iframe {
+    height: 240px;
+  }
+}
+/* Mobil: 2 kolumner i team-griden */
+@media (max-width: 600px) {
+  .who-team__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* Extra liten mobil: tajtare padding + ännu lägre karta */
+@media (max-width: 480px) {
+  .frame {
+    padding: 24px 16px 40px;
+    gap: 24px;
+  }
+  .frame .map h2 {
+    font-size: 20px;
+  }
+  .frame .row {
+    gap: 16px;
+  }
+  .frame .map-wrapper iframe {
+    height: 200px;
+  }
+  .who-team__grid {
+    gap: 24px 16px;
+  }
+  .site-footer {
+    padding: 32px 16px 80px;
+  }
+}
+@media (max-width: 768px) {
+  .frame .row {
+    gap: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .frame .row {
+    gap: 8px;
+  }
+}
 /* ===========================
    WHO WE ARE PAGE
    ========================== */
