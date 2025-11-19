@@ -17,10 +17,10 @@
     position: relative;
   }
 
-  /*#header h1*/
+  /* #header h1 */
   h1 {
     vertical-align: middle;
-    display:inline-block;
+    display: inline-block;
     padding: 0 5%;
     @include size(35, 40);
     margin-bottom: 5px;
@@ -38,7 +38,7 @@
     @media screen and (max-width: 1190px) {
       min-width: auto;
       max-height: 0px;
-      @include transition(1s); /*Taken fomr mixin.scss*/
+      @include transition(1s); /*Taken from mixin.scss*/
 
       li {
         display: none !important;
@@ -48,7 +48,7 @@
       &.responsive {
         width: 100%;
         max-height: 1000px;
-        @include transition(1s); /*Taken fomr mixin.scss*/
+        @include transition(1s); /*Taken from mixin.scss*/
 
         li {
 
@@ -72,10 +72,10 @@
           }
         }
       }
-    }/*Close @media screen and (max-width: 1190px)*/
+    } /*Close @media screen and (max-width: 1190px)*/
 
     ul {
-      display:block;
+      display: block;
 
       li {
         display: inline-block;
@@ -90,7 +90,7 @@
         }
 
         a.current {
-          color:$link-hover;
+          color: $link-hover;
           border-bottom: 3px solid $link-hover;
           padding-bottom: 16px;
         }
@@ -99,14 +99,15 @@
           display: none;
         }
 
+        /* ===== SÖKFÄLT MED IKON ===== */
         &.search input#searchInput {
-          background-image: url('../searchicon.png');
-          background-position: 7px 10px;
+          background-image: url('./assets/Images/searchicon.png');  // rätt sökväg
+          background-position: 7px center;
           background-repeat: no-repeat;
-          width: 160px;
           background-size: 15px auto;
+          width: 160px;
           box-sizing: border-box;
-          padding: 5px 5px 5px 30px;
+          padding: 5px 5px 5px 30px;  // plats för ikon
           border: 1px solid $light-grey;
           margin: 12px 0;
           box-shadow: 0 0 0 transparent;
@@ -128,18 +129,18 @@
             top: 30px;
 
             a {
-              font-size:20px;
+              font-size: 20px;
             }
           }
-        }/*@media screen and (max-width: 1190px)*/
+        } /*@media screen and (max-width: 1190px)*/
 
         // Smartphones
-        @media (max-width : 870px) {
-         &.icon {
-           top:15px;
-         }
+        @media (max-width: 870px) {
+          &.icon {
+            top: 15px;
+          }
         }
-      }/*Close li*/
+      } /*Close li*/
     } /*Close ul*/
   } /*Close nav#menu*/
 } /*Close #header*/

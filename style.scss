@@ -3,17 +3,17 @@ Name: Google News SASS
 Version: 1.0
 */
 
-@import "colors.scss"; /*Colors SASS file*/
-@import "mixin.scss"; /*Mixin SASS file*/
-@import "fonts.scss"; /*Fonts SASS file*/
-@import "header.scss"; /*Header SASS file*/
-@import "articles.scss"; /*Articles SASS file*/
-@import "contact.scss"; 
+@import "colors.scss";  /* Colors SASS file */
+@import "mixin.scss";   /* Mixin SASS file */
+@import "fonts.scss";   /* Fonts SASS file */
+@import "header.scss";  /* Header SASS file */
+@import "articles.scss";/* Articles SASS file */
+@import "contact.scss";
 @import "whoweare.scss";
 
 html {
   width: 100%;
-  margin:0;
+  margin: 0;
   border-top: 2px solid $link-hover;
 }
 
@@ -23,33 +23,33 @@ body {
   display: block;
   clear: both;
   padding: 0;
-  margin:0px auto;
+  margin: 0 auto;
   box-sizing: border-box;
-	font-family:$primary-font;
-	font-size:13pt;
-	color:black;
+  font-family: $primary-font;
+  font-size: 13pt;
+  color: black;
 }
 
-@media screen and (max-width : 1024px) {
+@media screen and (max-width: 1024px) {
+  /* All Devices */
 
-	/*All Devices*/
+  html.touch *:hover {
+    pointer-events: none !important;
+  }
 
-	html.touch *:hover {
-    	pointer-events: none !important;
-	}
+  html,
+  body {
+    width: 100% !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+    -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+  }
 
-	html, body {
-		width:100% !important;
-		margin:0px !important;
-		overflow-x:hidden !important;
-		-webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
-	}
-
-	body {
-		margin: 0 0 20px;
-		height:auto;
-		min-height:100%;
-	}
+  body {
+    margin: 0 0 20px;
+    height: auto;
+    min-height: 100%;
+  }
 }
 
 #content {
@@ -59,8 +59,55 @@ body {
   overflow: hidden;
 }
 
-/*------FOOTER-----*/
-
+/*------FOOTER (legacy id, används ej men kan ligga kvar)-----*/
 #footer {
-	width: 100%;
+  width: 100%;
+}
+
+/* ===========================
+   SEARCH FIELD WITH ICON
+   ========================== */
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ===========================
+   FULL-WIDTH DIVIDER ABOVE FOOTER
+   (används på alla sidor)
+   ========================== */
+
+.fullwidth-divider {
+  width: 100vw;
+  height: 1px;
+  background-color: #e5e5e5;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 20px;
+}
+/* ===========================
+   TEAM CARDS – GÄLLER BÅDE WHO WE ARE & CONTACT
+   ========================== */
+
+.team-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* samma proportion överallt */
+  object-fit: cover;     /* beskär så bilden fyller rutan */
+  display: block;
+  border-radius: 2px;
+}
+
+.team-card__name {
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.team-card__role {
+  font-size: 13px;
 }

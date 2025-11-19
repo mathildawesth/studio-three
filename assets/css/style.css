@@ -4,7 +4,7 @@ Name: Google News SASS
 Version: 1.0
 */
 /*COLORS*/
-/*Colors SASS file*/
+/* Colors SASS file */
 /*! MIXIN  */
 /*Transitions*/
 @-webkit-keyframes moveUp {
@@ -74,7 +74,7 @@ Version: 1.0
   opacity: 1;
 }
 
-/*Mixin SASS file*/
+/* Mixin SASS file */
 /*! TYPOGRAPHY  */
 /* --- Convert percent font sizes to em ---*/
 html, .paragraph, li, p {
@@ -145,7 +145,7 @@ a:hover, a:active, a:visited {
   text-decoration: none;
 }
 
-/*Fonts SASS file*/
+/* Fonts SASS file */
 /*! HEADER STYLES */
 #header {
   width: 110%;
@@ -166,7 +166,7 @@ a:hover, a:active, a:visited {
   }
 }
 #header {
-  /*#header h1*/
+  /* #header h1 */
 }
 #header h1 {
   vertical-align: middle;
@@ -196,7 +196,7 @@ a:hover, a:active, a:visited {
     -ms-transition: 1s;
     -o-transition: 1s;
     transition: 1s;
-    /*Taken fomr mixin.scss*/
+    /*Taken from mixin.scss*/
   }
   #header nav#menu li {
     display: none !important;
@@ -212,7 +212,7 @@ a:hover, a:active, a:visited {
     -ms-transition: 1s;
     -o-transition: 1s;
     transition: 1s;
-    /*Taken fomr mixin.scss*/
+    /*Taken from mixin.scss*/
   }
   #header nav#menu.responsive li:not(:last-child) {
     float: none;
@@ -259,12 +259,15 @@ a:hover, a:active, a:visited {
 #header nav#menu ul li.icon {
   display: none;
 }
+#header nav#menu ul li {
+  /* ===== SÖKFÄLT MED IKON ===== */
+}
 #header nav#menu ul li.search input#searchInput {
-  background-image: url("../searchicon.png");
-  background-position: 7px 10px;
+  background-image: url("./assets/Images/searchicon.png");
+  background-position: 7px center;
   background-repeat: no-repeat;
-  width: 160px;
   background-size: 15px auto;
+  width: 160px;
   box-sizing: border-box;
   padding: 5px 5px 5px 30px;
   border: 1px solid #CCC;
@@ -315,7 +318,7 @@ a:hover, a:active, a:visited {
 #header {
   /*Close nav#menu*/
 } /*Close #header*/
-/*Header SASS file*/
+/* Header SASS file */
 /*! ARTICLE STYLES */
 article#article {
   overflow: hidden;
@@ -520,7 +523,26 @@ article#article {
   overflow: hidden !important;
 }
 
-/*Articles SASS file*/
+/* Articles SASS file */
+/* ===========================
+   HERO PÅ CONTACT
+   ========================== */
+.hero {
+  width: 100vw;
+  height: 387px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-image: url("../Images/architecture.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* ===========================
    CONTACT PAGE LAYOUT
    ========================== */
@@ -528,12 +550,12 @@ article#article {
 .frame {
   width: 100%;
   max-width: 1226px; /* samma bredd som designen */
-  margin: 0 auto 80px;
-  padding: 60px 20px 80px;
+  margin: 0 auto 60px;
+  padding: 40px 20px 40px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px;
 }
 
 /* “Get in touch”-sektionen */
@@ -604,7 +626,6 @@ article#article {
 /* ===========================
    KARTA
    ========================== */
-/* Wrapper runt iframen (kartan) */
 .frame .map-wrapper {
   width: 1226px;
   max-width: 100%;
@@ -615,7 +636,6 @@ article#article {
   justify-content: center;
 }
 
-/* Själva Google Maps-iframe */
 .frame .map-wrapper iframe {
   width: 1226px;
   max-width: 100%;
@@ -626,12 +646,27 @@ article#article {
 }
 
 /* ===========================
+   MEET THE TEAM (på contactsidan)
+   ========================== */
+/* Lite tajtare runt bilderna – bara på contactsidan */
+.frame .who-team {
+  padding: 20px 0 10px;
+}
+
+/* Gör “Meet the team”-rubriken identisk med “General inquiries” */
+.frame .who-team h3 {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+/* ===========================
    RESPONSIVE
    ========================== */
 @media (max-width: 768px) {
   .frame {
-    padding: 40px 16px 60px;
-    gap: 40px;
+    padding: 32px 16px 40px;
+    gap: 32px;
   }
   .frame .row {
     flex-direction: column;
@@ -642,11 +677,51 @@ article#article {
     align-self: flex-start;
   }
 }
-/* Meet the team – gör titeln identisk med “General inquiries” */
-.who-team h3 {
-  font-weight: 700;
-  font-size: 16px;
-  margin: 0 0 8px;
+/* Extra mobilanpassning för VG – ner till 480px */
+@media (max-width: 480px) {
+  .frame {
+    padding: 24px 16px 40px;
+    gap: 24px;
+  }
+  .frame .map h2 {
+    font-size: 20px;
+  }
+  .frame .row {
+    gap: 16px;
+  }
+  .frame .map-wrapper iframe {
+    height: 240px;
+  }
+  .who-team__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+  .site-footer {
+    padding: 32px 16px 80px;
+  }
+}
+/* ===========================
+   FOOTER (gäller alla sidor)
+   ========================== */
+.site-footer {
+  padding: 32px 0 60px;
+  max-width: 1226px;
+  margin: 0 auto;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-column {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-column--right {
+  text-align: right;
 }
 
 /* ===========================
@@ -655,122 +730,12 @@ article#article {
 .who-we-are-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px 80px;
-}
-
-/* 1. Hero-bild */
-.who-hero img {
-  width: 100%;
-  display: block;
-}
-
-/* 2. Statistik-raden */
-.who-stats {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 40px 0;
-}
-
-.who-stats__item {
-  text-align: left;
-}
-
-.who-stats__number {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.who-stats__label {
-  font-size: 0.9rem;
-}
-
-/* 3. Story-sektion */
-.who-story {
-  padding: 40px 0;
-}
-
-.who-story h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-}
-
-.who-story p {
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-
-/* 4. Team-sektion */
-.who-team {
-  padding: 40px 0 60px;
-}
-
-.who-team h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
-  margin-bottom: 24px;
-}
-
-/* Rutnät med bilder */
-.who-team__grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 32px;
-}
-
-.team-card img {
-  width: 100%;
-  display: block;
-}
-
-.team-card__name {
-  margin-top: 8px;
-  font-weight: 700;
-}
-
-.team-card__role {
-  font-size: 0.9rem;
+  padding: 0 40px 20px;
 }
 
 /* ===========================
-   MEET THE TEAM
+   1. Hero-bild – full bredd
    ========================== */
-.who-team {
-  max-width: 1200px;
-  margin: 80px auto 120px;
-  padding: 0 40px;
-}
-
-.who-team h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 24px;
-  margin-bottom: 32px;
-}
-
-/* Rutnätet med 8 kort (4 per rad) */
-.who-team__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-}
-
-/* Själva kortet */
-.team-card img {
-  width: 100%;
-  display: block;
-}
-
-.team-card__name {
-  margin-top: 12px;
-  font-weight: 700;
-}
-
-.team-card__role {
-  font-size: 14px;
-}
-
 .who-hero {
   width: 100vw;
   position: relative;
@@ -787,30 +752,80 @@ article#article {
 }
 
 /* ===========================
-   MEET THE TEAM (båda sidor)
+   2. Statistik-raden
+   ========================== */
+.who-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.who-stats__item {
+  text-align: left;
+}
+
+.who-we-are-page .who-stats__number {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.who-we-are-page .who-stats__label {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ===========================
+   3. Story-sektion
+   ========================== */
+.who-story {
+  padding: 40px 0;
+}
+
+.who-story h2 {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+
+.who-story p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* ===========================
+   4. Meet the team
    ========================== */
 .who-team {
-  max-width: 1226px;
-  margin: 80px auto 120px;
-  padding: 0 20px;
+  padding: 40px 0 20px;
 }
 
 .who-team h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 24px;
-  margin-bottom: 32px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 0 12px;
 }
 
-/* Rutnät med kort – 4 eller 5 per rad beroende på bredd */
+/* Grid med lika stora bilder */
 .who-team__grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 40px 32px;
 }
 
+/* Bildkort */
 .team-card img {
   width: 100%;
+  aspect-ratio: 3/4; /* alla samma proportion */
+  object-fit: cover; /* beskär så de fyller rutan */
   display: block;
+  border-radius: 2px;
 }
 
 .team-card__name {
@@ -823,7 +838,9 @@ article#article {
   font-size: 13px;
 }
 
-/* Lite snällare layout på mindre skärm */
+/* ===========================
+   Responsive
+   ========================== */
 @media (max-width: 1000px) {
   .who-team__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -832,6 +849,32 @@ article#article {
 @media (max-width: 600px) {
   .who-team__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* Extra mobilanpassning för VG – ner till 480px */
+@media (max-width: 480px) {
+  .who-we-are-page {
+    padding: 0 16px 24px;
+  }
+  .who-stats {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+  }
+  .who-story {
+    padding: 24px 0;
+  }
+  .who-story h2 {
+    font-size: 14px;
+  }
+  .who-story p {
+    font-size: 14px;
+  }
+  .who-team {
+    padding: 24px 0 16px;
+  }
+  .who-team__grid {
+    gap: 24px 16px;
   }
 }
 html {
@@ -846,7 +889,7 @@ body {
   display: block;
   clear: both;
   padding: 0;
-  margin: 0px auto;
+  margin: 0 auto;
   box-sizing: border-box;
   font-family: "Playfair Display", serif;
   font-size: 13pt;
@@ -854,13 +897,14 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-  /*All Devices*/
+  /* All Devices */
   html.touch *:hover {
     pointer-events: none !important;
   }
-  html, body {
+  html,
+  body {
     width: 100% !important;
-    margin: 0px !important;
+    margin: 0 !important;
     overflow-x: hidden !important;
     -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
   }
@@ -877,9 +921,55 @@ body {
   overflow: hidden;
 }
 
-/*------FOOTER-----*/
+/*------FOOTER (legacy id, används ej men kan ligga kvar)-----*/
 #footer {
   width: 100%;
+}
+
+/* ===========================
+   SEARCH FIELD WITH ICON
+   ========================== */
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ===========================
+   FULL-WIDTH DIVIDER ABOVE FOOTER
+   (används på alla sidor)
+   ========================== */
+.fullwidth-divider {
+  width: 100vw;
+  height: 1px;
+  background-color: #e5e5e5;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 20px;
+}
+
+/* ===========================
+   TEAM CARDS – GÄLLER BÅDE WHO WE ARE & CONTACT
+   ========================== */
+.team-card img {
+  width: 100%;
+  aspect-ratio: 3/4; /* samma proportion överallt */
+  object-fit: cover; /* beskär så bilden fyller rutan */
+  display: block;
+  border-radius: 2px;
+}
+
+.team-card__name {
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.team-card__role {
+  font-size: 13px;
 }
 
 /*# sourceMappingURL=style.css.map */
